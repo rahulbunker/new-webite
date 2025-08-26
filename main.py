@@ -10,7 +10,6 @@ import time
 from pathlib import Path
 
 # Load .env
-load_dotenv()
 api_key = "AIzaSyBnlJnbN5kve35EARmEeWX1PfcOBNK3G3o"
 
 if not api_key:
@@ -238,3 +237,4 @@ if __name__ == "__main__":
     print("📚 API Documentation available at: http://localhost:8000/docs")
 
     uvicorn.run(app, host="0.0.0.0", port=8000, reload=True)
+
