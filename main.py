@@ -3,7 +3,6 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, FileResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
-from dotenv import load_dotenv
 from langchain_google_genai import ChatGoogleGenerativeAI
 import os
 import sqlite3
@@ -12,7 +11,7 @@ from pathlib import Path
 
 # Load .env
 load_dotenv()
-api_key = os.getenv("GOOGLE_API_KEY")
+api_key = "AIzaSyBnlJnbN5kve35EARmEeWX1PfcOBNK3G3o"
 
 if not api_key:
     raise ValueError("GOOGLE_API_KEY not found in environment variables")
@@ -237,4 +236,5 @@ if __name__ == "__main__":
     print("🚀 Starting Gemini Chat Bot...")
     print("📝 Open your browser and go to: http://localhost:8000")
     print("📚 API Documentation available at: http://localhost:8000/docs")
+
     uvicorn.run(app, host="0.0.0.0", port=8000, reload=True)
